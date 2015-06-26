@@ -12,8 +12,13 @@ RUN apt-get -qq update && apt-get install --no-install-recommends -y openjdk-7-j
 
 RUN install-repository \
     "--url https://testtoolshed.g2.bx.psu.edu/ -o bgruening --name image_processing" \
+    "--url https://testtoolshed.g2.bx.psu.edu/ -o iuc --name imagej2_bunwarpj_adopt_transform" \
     "--url https://testtoolshed.g2.bx.psu.edu/ -o iuc --name imagej2_bunwarpj_align" \
     "--url https://testtoolshed.g2.bx.psu.edu/ -o iuc --name imagej2_bunwarpj_compare_elastic" \
+    "--url https://testtoolshed.g2.bx.psu.edu/ -o iuc --name imagej2_bunwarpj_compare_elastic_raw" \
+    "--url https://testtoolshed.g2.bx.psu.edu/ -o iuc --name imagej2_bunwarpj_compare_raw" \
+    "--url https://testtoolshed.g2.bx.psu.edu/ -o iuc --name imagej2_bunwarpj_compose_raw" \
+    "--url https://testtoolshed.g2.bx.psu.edu/ -o iuc --name imagej2_bunwarpj_compose_raw_elastic" \
     "--url https://testtoolshed.g2.bx.psu.edu/ -o iuc --name imagej2_bunwarpj_convert_to_raw" \
     "--url https://testtoolshed.g2.bx.psu.edu/ -o iuc --name imagej2_bunwarpj_elastic_transform" \
     "--url https://testtoolshed.g2.bx.psu.edu/ -o iuc --name imagej2_bunwarpj_raw_transform" \
