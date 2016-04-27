@@ -16,13 +16,13 @@ After the successful installation, all what you need to do is:
 I will shortly explain the meaning of all the parameters. For a more detailed describtion please consult
 the [docker manual](http://docs.docker.io/), it's really worth reading.
 
-Let's start: ``docker run`` will run the Image/Container for you. 
-In case you do not have the Container stored locally, docker will download it for you. ``-p 8080:80`` 
-will make the port 80 (inside of the container) available on port 8080 on your host. 
-Inside the container a Apache Webserver is running on port 80 and that port can be bound to a 
-local port on your host computer. With this parameter you can access your Galaxy instance via ``http://localhost:8080`` 
-immediately after executing the command above. ``bgruening/galaxy-deeptools`` is the Image/Container name, 
-that directs docker to the correct path in the [docker index](https://index.docker.io/u/bgruening/galaxy-imaging/). ``-d`` 
+Let's start: ``docker run`` will run the Image/Container for you.
+In case you do not have the Container stored locally, docker will download it for you. ``-p 8080:80``
+will make the port 80 (inside of the container) available on port 8080 on your host.
+Inside the container a Apache Webserver is running on port 80 and that port can be bound to a
+local port on your host computer. With this parameter you can access your Galaxy instance via ``http://localhost:8080``
+immediately after executing the command above. ``bgruening/galaxy-deeptools`` is the Image/Container name,
+that directs docker to the correct path in the [docker index](https://index.docker.io/u/bgruening/galaxy-imaging/). ``-d``
 will start the docker container in daemon mode. For an interactive session, you can execute:
 
 ``docker run -i -t -p 8080:80 bgruening/galaxy-imaging``
@@ -56,7 +56,7 @@ The port 8800 is the proxy port that is used to handle Interactive Environments.
 Using Parent docker
 -------------------
 On some linux distributions, Docker-In-Docker can run into issues (such as running out of loopback interfaces). If this is an issue,
-you can use a 'legacy' mode that use a docker socket for the parent docker installation mounted inside the container. To engage, set the 
+you can use a 'legacy' mode that use a docker socket for the parent docker installation mounted inside the container. To engage, set the
 environmental variable DOCKER_PARENT
 
 ``docker run -d -p 8080:80 -p 8021:21 -p 8800:8800 --privileged=true -e DOCKER_PARENT=True -v /var/run/docker.sock:/var/run/docker.sock -v /home/user/galaxy_storage/:/export/ bgruening/galaxy-imaging``
@@ -82,6 +82,7 @@ Contributers
 
  - Greg von Kuster
  - Bjoern Gruening
+ - Thomas Wollmann
 
 
 History
