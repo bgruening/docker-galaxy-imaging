@@ -34,7 +34,7 @@ before_install:
   - sudo useradd -u $GALAXY_UID -r -g $GALAXY_TRAVIS_USER -d $GALAXY_HOME -p travis_testing -c "Galaxy user" $GALAXY_TRAVIS_USER
   - sudo mkdir $GALAXY_HOME
   - sudo chown -R $GALAXY_TRAVIS_USER:$GALAXY_TRAVIS_USER $GALAXY_HOME
-  - docker build -t galaxy-docker/test .
+  - travis_wait 40 docker build -t galaxy-docker/test .
   - |
     docker run -d -p 8080:80 -p 8021:21 -p 8800:8800 \
     --name galaxy_test_container \
