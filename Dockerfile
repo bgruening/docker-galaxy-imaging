@@ -20,3 +20,6 @@ RUN apt-get -qq update && apt-get install --no-install-recommends -y openjdk-7-j
 # Install imaging tools
 ADD imagingtoolbox_tools.yml $GALAXY_ROOT/tools.yaml
 RUN install-tools $GALAXY_ROOT/tools.yaml
+
+# Install imaging tour
+ADD tours/imaging.galaxy_ui.yaml $GALAXY_ROOT/config/plugins/tours/imaging.galaxy_ui.yaml 
