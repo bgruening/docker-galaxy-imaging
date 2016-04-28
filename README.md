@@ -1,3 +1,5 @@
+[![Docker Repository on Quay](https://quay.io/repository/bgruening/galaxy-imaging/status "Docker Repository on Quay")](https://quay.io/repository/bgruening/galaxy-imaging)
+
 Galaxy Workbench for Image Analysis (Galaxy Imaging flavour)
 ============================================================
 
