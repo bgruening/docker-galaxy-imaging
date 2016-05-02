@@ -13,7 +13,6 @@ RUN add-tool-shed --url 'http://testtoolshed.g2.bx.psu.edu/' --name 'Test Tool S
 
 ENV GALAXY_CONFIG_CONDA_AUTO_INSTALL True \
 GALAXY_CONFIG_CONDA_AUTO_INIT True \
-GALAXY_CONFIG_CONDA_ENSURE_CHANNELS r,bioconda
 
 RUN apt-get -qq update && apt-get install --no-install-recommends -y openjdk-7-jdk
 
@@ -22,4 +21,4 @@ ADD imagingtoolbox_tools.yml $GALAXY_ROOT/tools.yaml
 RUN install-tools $GALAXY_ROOT/tools.yaml
 
 # Install imaging tour
-ADD tours/imaging.galaxy_ui.yaml $GALAXY_ROOT/config/plugins/tours/imaging.galaxy_ui.yaml 
+ADD tours/imaging.galaxy_ui.yaml $GALAXY_ROOT/config/plugins/tours/imaging.galaxy_ui.yaml
