@@ -2,7 +2,7 @@
 #
 # VERSION       0.1
 
-FROM bgruening/galaxy-stable:dev
+FROM bgruening/galaxy-stable:stable
 
 MAINTAINER Björn A. Grüning, bjoern.gruening@gmail.com
 
@@ -12,7 +12,7 @@ ENV GALAXY_CONFIG_ENABLE_BETA_TOOL_COMMAND_ISOLATION True
 RUN add-tool-shed --url 'http://testtoolshed.g2.bx.psu.edu/' --name 'Test Tool Shed'
 
 ENV GALAXY_CONFIG_CONDA_AUTO_INSTALL True \
-GALAXY_CONFIG_CONDA_AUTO_INIT True \
+    GALAXY_CONFIG_CONDA_AUTO_INIT True \
 
 RUN apt-get -qq update && apt-get install --no-install-recommends -y openjdk-7-jdk
 
