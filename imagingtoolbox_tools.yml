@@ -135,13 +135,8 @@ tools:
   owner: iuc
   tool_panel_section_label: "Image Utils"
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
-  
+
 - name: image_processing
   owner: bgruening
-  tool_panel_section_label: "Image Utils"
-  tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
-
-- name: imagej2_convert_format
-  owner: iuc
   tool_panel_section_label: "Image Utils"
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
