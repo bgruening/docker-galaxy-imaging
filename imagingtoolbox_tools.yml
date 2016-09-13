@@ -79,7 +79,7 @@ tools:
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
   install_resolver_dependencies: True
 
-- name: imagej2_bunwarpj_adopt_transform
+- name: imagej2_bunwarpj_adapt_transform
   owner: iuc
   tool_panel_section_label: "Image Registration"
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
