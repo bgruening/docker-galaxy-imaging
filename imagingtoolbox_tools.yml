@@ -183,6 +183,13 @@ tools:
   install_resolver_dependencies: True
   install_tool_dependencies: False
 
+- name: mahotas_features
+  owner: thomaswollmann
+  tool_panel_section_label: "Image Analysis"
+  tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
+  install_resolver_dependencies: True
+  install_tool_dependencies: False  
+
 - name: imagej2_create_image
   owner: iuc
   tool_panel_section_label: "Image Utils"
