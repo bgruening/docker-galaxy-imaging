@@ -84,7 +84,14 @@ tools:
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
   install_resolver_dependencies: True
   install_tool_dependencies: False
-
+  
+- name: color_deconvolution
+  owner: thomaswollmann
+  tool_panel_section_label: "Image Processing"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  install_resolver_dependencies: True
+  install_tool_dependencies: False  
+  
 - name: imagej2_bunwarpj_align
   owner: iuc
   tool_panel_section_label: "Image Registration"
@@ -186,7 +193,7 @@ tools:
 - name: mahotas_features
   owner: thomaswollmann
   tool_panel_section_label: "Image Analysis"
-  tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
   install_resolver_dependencies: True
   install_tool_dependencies: False  
 
