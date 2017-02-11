@@ -210,3 +210,10 @@ tools:
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
   install_resolver_dependencies: True
   install_tool_dependencies: False
+  
+- name: binary2labelimage
+  owner: thomaswollmann
+  tool_panel_section_label: "Image Utils"
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+  install_resolver_dependencies: True
+  install_tool_dependencies: False
