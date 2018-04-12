@@ -1,5 +1,6 @@
 [![Docker Repository on Quay](https://quay.io/repository/bgruening/galaxy-imaging/status "Docker Repository on Quay")](https://quay.io/repository/bgruening/galaxy-imaging)
 [![Build Status](https://travis-ci.org/bgruening/docker-galaxy-imaging.svg?branch=master)](https://travis-ci.org/bgruening/docker-galaxy-imaging)
+[![Gitter](https://badges.gitter.im/bgruening/docker-galaxy-stable.svg)](https://gitter.im/bgruening/docker-galaxy-stable?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Galaxy Workbench for Image Analysis (Galaxy Imaging flavour)
 ============================================================
