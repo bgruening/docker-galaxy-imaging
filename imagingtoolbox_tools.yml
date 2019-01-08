@@ -131,6 +131,14 @@ tools:
   tool_panel_section_label: "Image Registration"
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
 
+- name: projective_transformation
+  owner: iuc
+  tool_panel_section_label: "Image Registration"
+
+- name: projective_transformation_points
+  owner: iuc
+  tool_panel_section_label: "Image Registration"
+
 - name: imagej2_analyze_particles_binary
   owner: iuc
   tool_panel_section_label: "Image Analysis"
@@ -148,7 +156,23 @@ tools:
 - name: visceral_evaluatesegmentation
   owner: thomaswollmann
   tool_panel_section_label: "Image Analysis"
+
+- name: detection_viz
+  owner: thomaswollmann
+  tool_panel_section_label: "Visualization"
+
+- name: overlay_moving_and_fixed_image
+  owner: thomaswollmann
+  tool_panel_section_label: "Visualization"
+
+- name: overlay_segmentation_mask
+  owner: thomaswollmann
+  tool_panel_section_label: "Visualization"
   
+- name: wsi_extract_top_view
+  owner: thomaswollmann
+  tool_panel_section_label: "Visualization"
+
 - name: imagej2_create_image
   owner: iuc
   tool_panel_section_label: "Image Utils"
@@ -160,5 +184,21 @@ tools:
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
   
 - name: binary2labelimage
+  owner: thomaswollmann
+  tool_panel_section_label: "Image Utils"
+
+- name: labelimage2points
+  owner: thomaswollmann
+  tool_panel_section_label: "Image Utils"
+
+- name: points2labelimage
+  owner: thomaswollmann
+  tool_panel_section_label: "Image Utils"
+
+- name: mergeneighboursinlabelimage
+  owner: thomaswollmann
+  tool_panel_section_label: "Image Utils"
+
+- name: scale_image
   owner: thomaswollmann
   tool_panel_section_label: "Image Utils"
