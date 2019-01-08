@@ -132,11 +132,11 @@ tools:
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
 
 - name: projective_transformation
-  owner: iuc
+  owner: thomaswollmann
   tool_panel_section_label: "Image Registration"
 
 - name: projective_transformation_points
-  owner: iuc
+  owner: thomaswollmann
   tool_panel_section_label: "Image Registration"
 
 - name: imagej2_analyze_particles_binary
