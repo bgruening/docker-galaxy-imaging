@@ -93,6 +93,7 @@ History
 =======
 
  - 0.1: Initial release!
+ - 18.09 release
 
 
 Support & Bug Reports
