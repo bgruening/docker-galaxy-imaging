@@ -25,5 +25,5 @@ install:
 script:
   - make test_api
   - make test_ftp
-  #- make test_bioblend
+  - make test_bioblend
   #- make test_docker_in_docker
