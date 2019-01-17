@@ -156,6 +156,18 @@ tools:
 - name: visceral_evaluatesegmentation
   owner: thomaswollmann
   tool_panel_section_label: "Image Analysis"
+  
+- name: count_objects
+  owner: thomaswollmann
+  tool_panel_section_label: "Image Analysis"
+  
+- name: coordinates_of_roi
+  owner: thomaswollmann
+  tool_panel_section_label: "Image Analysis"
+  
+- name: 2d_feature_extraction
+  owner: thomaswollmann
+  tool_panel_section_label: "Image Analysis"
 
 - name: detection_viz
   owner: thomaswollmann
