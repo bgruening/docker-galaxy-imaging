@@ -64,11 +64,11 @@ tools:
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
   
 - name: color_deconvolution
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Image Processing"
  
 - name: anisotropic_diffusion
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Image Processing"
  
 - name: imagej2_bunwarpj_align
@@ -132,11 +132,11 @@ tools:
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
 
 - name: projective_transformation
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Image Registration"
 
 - name: projective_transformation_points
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Image Registration"
 
 - name: imagej2_analyze_particles_binary
@@ -150,39 +150,39 @@ tools:
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
 
 - name: mahotas_features
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Image Analysis"
 
 - name: visceral_evaluatesegmentation
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Image Analysis"
   
 - name: count_objects
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Image Analysis"
   
 - name: coordinates_of_roi
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Image Analysis"
   
 - name: 2d_feature_extraction
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Image Analysis"
 
 - name: detection_viz
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Visualization"
 
 - name: overlay_moving_and_fixed_image
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Visualization"
 
 - name: overlay_segmentation_mask
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Visualization"
   
 - name: wsi_extract_top_view
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Visualization"
 
 - name: imagej2_create_image
@@ -196,21 +196,21 @@ tools:
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
   
 - name: binary2labelimage
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Image Utils"
 
 - name: labelimage2points
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Image Utils"
 
 - name: points2labelimage
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Image Utils"
 
 - name: mergeneighboursinlabelimage
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Image Utils"
 
 - name: scale_image
-  owner: thomaswollmann
+  owner: imgteam
   tool_panel_section_label: "Image Utils"
