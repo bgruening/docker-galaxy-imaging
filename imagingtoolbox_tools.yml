@@ -177,11 +177,15 @@ tools:
   owner: imgteam
   tool_panel_section_label: "Visualization"
 
-- name: overlay_segmentation_mask
+- name: colocalization_viz
   owner: imgteam
   tool_panel_section_label: "Visualization"
   
 - name: wsi_extract_top_view
+  owner: imgteam
+  tool_panel_section_label: "Visualization"  
+  
+- name: overlay_segmentation_mask
   owner: imgteam
   tool_panel_section_label: "Visualization"
 
@@ -194,6 +198,10 @@ tools:
   owner: bgruening
   tool_panel_section_label: "Image Utils"
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
+
+- name: binaryimage2points
+  owner: imgteam
+  tool_panel_section_label: "Image Utils"
   
 - name: binary2labelimage
   owner: imgteam
@@ -206,11 +214,31 @@ tools:
 - name: points2labelimage
   owner: imgteam
   tool_panel_section_label: "Image Utils"
+  
+- name: points2binaryimage
+  owner: imgteam
+  tool_panel_section_label: "Image Utils"
 
 - name: mergeneighboursinlabelimage
   owner: imgteam
   tool_panel_section_label: "Image Utils"
 
 - name: scale_image
+  owner: imgteam
+  tool_panel_section_label: "Image Utils"
+  
+- name: concat_channels
+  owner: imgteam
+  tool_panel_section_label: "Image Utils"
+  
+- name: permutate_axis
+  owner: imgteam
+  tool_panel_section_label: "Image Utils"
+
+- name: slice_image
+  owner: imgteam
+  tool_panel_section_label: "Image Utils"
+
+- name: split_labelmap
   owner: imgteam
   tool_panel_section_label: "Image Utils"
