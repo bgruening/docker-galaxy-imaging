@@ -3,6 +3,14 @@ galaxy_instance: http://localhost:8080
 install_resolver_dependencies: True
 install_tool_dependencies: False
 tools:
+- name: 2d_auto_threshold
+  owner: imgteam
+  tool_panel_section_label: "Image Processing"
+  
+- name: 2d_auto_local_threshold
+  owner: imgteam
+  tool_panel_section_label: "Image Processing"
+
 - name: imagej2_adjust_threshold_binary
   owner: iuc
   tool_panel_section_label: "Image Processing"
@@ -27,6 +35,10 @@ tools:
   owner: iuc
   tool_panel_section_label: "Image Processing"
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
+  
+- name: 2d_filter_segmentation_by_features
+  owner: imgteam
+  tool_panel_section_label: "Image Processing"
 
 - name: imagej2_math
   owner: iuc
@@ -58,10 +70,18 @@ tools:
   tool_panel_section_label: "Image Processing"
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
   
+- name: 2d_simple_filter
+  owner: imgteam
+  tool_panel_section_label: "Image Processing"
+  
 - name: imagej2_watershed_binary
   owner: iuc
   tool_panel_section_label: "Image Processing"
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
+  
+- name: 2d_split_binaryimage_by_watershed
+  owner: imgteam
+  tool_panel_section_label: "Image Processing"
   
 - name: color_deconvolution
   owner: imgteam
@@ -130,6 +150,10 @@ tools:
   owner: iuc
   tool_panel_section_label: "Image Registration"
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
+  
+- name: landmark_registration
+  owner: imgteam
+  tool_panel_section_label: "Image Registration"
 
 - name: projective_transformation
   owner: imgteam
@@ -231,7 +255,15 @@ tools:
   owner: imgteam
   tool_panel_section_label: "Image Utils"
   
+- name: imagecoordinates_flipaxis
+  owner: imgteam
+  tool_panel_section_label: "Image Utils"
+  
 - name: permutate_axis
+  owner: imgteam
+  tool_panel_section_label: "Image Utils"
+  
+- name: split_labelmap
   owner: imgteam
   tool_panel_section_label: "Image Utils"
 
@@ -240,5 +272,9 @@ tools:
   tool_panel_section_label: "Image Utils"
 
 - name: split_labelmap
+  owner: imgteam
+  tool_panel_section_label: "Image Utils"
+  
+- name: image_info
   owner: imgteam
   tool_panel_section_label: "Image Utils"
