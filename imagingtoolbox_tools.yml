@@ -2,7 +2,7 @@ api_key: admin
 galaxy_instance: http://localhost:8080
 install_resolver_dependencies: True
 install_tool_dependencies: False
-tools:
+tools:  
 - name: 2d_auto_threshold
   owner: imgteam
   tool_panel_section_label: "Image Processing"
@@ -222,7 +222,11 @@ tools:
   owner: bgruening
   tool_panel_section_label: "Image Utils"
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
-
+  
+- name: bfconvert
+  owner: imgteam
+  tool_panel_section_label: "Image Utils"
+  
 - name: binaryimage2points
   owner: imgteam
   tool_panel_section_label: "Image Utils"
