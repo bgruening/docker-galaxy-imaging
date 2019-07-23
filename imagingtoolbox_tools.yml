@@ -70,6 +70,10 @@ tools:
   tool_panel_section_label: "Image Processing"
   tool_shed_url: https://testtoolshed.g2.bx.psu.edu/
   
+- name: 2d_histogram_equalization
+  owner: imgteam
+  tool_panel_section_label: "Image Processing"
+  
 - name: 2d_simple_filter
   owner: imgteam
   tool_panel_section_label: "Image Processing"
