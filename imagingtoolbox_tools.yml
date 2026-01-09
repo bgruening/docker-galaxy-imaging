@@ -1,7 +1,3 @@
-api_key: admin
-galaxy_instance: http://localhost:8080
-install_resolver_dependencies: True
-install_tool_dependencies: False
 tools:  
 - name: unzip
   owner: imgteam
