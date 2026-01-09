@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  release:
+    types:
+      - published
+
+env:
+  IMAGE_NAME: quay.io/bgruening/galaxy-imaging
+
+jobs:
+  build:
+    if: github.event_name != 'release'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          pull: true
+          push: false
+          tags: ${{ env.IMAGE_NAME }}:ci-${{ github.sha }}
+
+  release:
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Quay
+        env:
+          QUAY_OAUTH_TOKEN: ${{ secrets.QUAY_OAUTH_TOKEN }}
+          QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
+        run: |
+          if [ -z "$QUAY_OAUTH_TOKEN" ]; then
+            echo "QUAY_OAUTH_TOKEN is not set." >&2
+            exit 1
+          fi
+          USERNAME="${QUAY_USERNAME:-oauth2}"
+          echo "${QUAY_OAUTH_TOKEN}" | docker login quay.io -u "${USERNAME}" --password-stdin
+
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          pull: true
+          push: true
+          tags: |
+            ${{ env.IMAGE_NAME }}:${{ github.event.release.tag_name }}
+            ${{ env.IMAGE_NAME }}:latest
