@@ -1,6 +1,6 @@
 # Galaxy - Imaging flavour
 
-FROM bgruening/galaxy-stable:19.01
+FROM quay.io/bgruening/galaxy:24.2
 
 MAINTAINER Björn A. Grüning, bjoern.gruening@gmail.com
 
