@@ -35,6 +35,8 @@ jobs:
   release:
     if: github.event_name == 'release'
     runs-on: ubuntu-latest
+    environment:
+      name: quay.io
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
