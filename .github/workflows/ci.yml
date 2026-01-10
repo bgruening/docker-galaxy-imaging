@@ -2,9 +2,15 @@ name: CI
 
 on:
   pull_request:
+    paths-ignore:
+      - '.github/**'
+      - 'README.md'
   push:
     branches:
       - main
+    paths-ignore:
+      - '.github/**'
+      - 'README.md'
   release:
     types:
       - published
