@@ -37,8 +37,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: quay.io
-    env:
-      QUAY_OAUTH_TOKEN: ${{ secrets.QUAY_OAUTH_TOKEN || vars.QUAY_OAUTH_TOKEN }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -46,7 +44,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Log in to Quay
+      - name: Login to Quay
         uses: docker/login-action@v2
         with:
           registry: quay.io
