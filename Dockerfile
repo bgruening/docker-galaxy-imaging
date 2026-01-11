@@ -1,16 +1,20 @@
-# Galaxy - Imaging flavour
+# Galaxy - Imaging
 
-FROM quay.io/bgruening/galaxy:25.1.1
+ARG BASE_IMAGE=quay.io/bgruening/galaxy:25.1.1
+FROM ${BASE_IMAGE}
 
-MAINTAINER Björn A. Grüning, bjoern.gruening@gmail.com
+LABEL maintainer="Björn A. Grüning <bjoern.gruening@gmail.com>"
 
 ENV GALAXY_CONFIG_BRAND="Galaxy Imaging" \
     ENABLE_TTS_INSTALL=True
 
-# Install imaging tools from upstream list (skip header lines)
-RUN curl -fsSL https://raw.githubusercontent.com/usegalaxy-eu/usegalaxy-eu-tools/refs/heads/master/imaging.yaml | \
-    tail -n +4 > $GALAXY_ROOT/tools.yaml && \
-    install-tools $GALAXY_ROOT/tools.yaml
+# Install tools
+ARG TOOL_FILE=imagingtoolbox_tools.yml
+# We use ADD here and not COPY to support URLs from upstream tool files
+ADD ${TOOL_FILE} $GALAXY_ROOT/tools.yaml
+RUN tail -n +4 $GALAXY_ROOT/tools.yaml > $GALAXY_ROOT/tools_clean.yaml
+
+RUN install-tools $GALAXY_ROOT/tools_clean.yaml
 
 # Install imaging tour
 #ADD tours/imaging.galaxy_ui.yaml $GALAXY_ROOT/config/plugins/tours/imaging.galaxy_ui.yaml

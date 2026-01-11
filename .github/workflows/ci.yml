@@ -16,7 +16,10 @@ on:
       - published
 
 env:
-  IMAGE_NAME: quay.io/bgruening/galaxy-imaging
+  IMAGE_REGISTRY: quay.io
+  IMAGE_REPOSITORY: quay.io/bgruening/galaxy-imaging
+  GALAXY_BASE_IMAGE: quay.io/bgruening/galaxy:25.1.1
+  TOOL_FILE: https://raw.githubusercontent.com/usegalaxy-eu/usegalaxy-eu-tools/refs/heads/master/imaging.yaml
 
 jobs:
   build:
@@ -26,42 +29,35 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Build image
-        uses: docker/build-push-action@v5
+      - name: Build image (no push)
+        uses: bgruening/docker-galaxy-github-action@v1
         with:
-          context: .
-          file: ./Dockerfile
-          pull: true
+          registry: ${{ env.IMAGE_REGISTRY }}
+          repository: ${{ env.IMAGE_REPOSITORY }}
+          tags: ci-${{ github.sha }}
+          tool-file: ${{ env.TOOL_FILE }}
+          base-image: ${{ env.GALAXY_BASE_IMAGE }}
           push: false
-          tags: ${{ env.IMAGE_NAME }}:ci-${{ github.sha }}
 
   release:
     if: github.event_name == 'release'
     runs-on: ubuntu-latest
+    environment:
+      name: quay.io
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Login to Quay
-        uses: docker/login-action@v3
+      - name: Build and push image
+        uses: bgruening/docker-galaxy-github-action@v1
         with:
-          registry: quay.io
+          registry: ${{ env.IMAGE_REGISTRY }}
+          repository: ${{ env.IMAGE_REPOSITORY }}
+          push: true
+          tool-file: ${{ env.TOOL_FILE }}
+          base-image: ${{ env.GALAXY_BASE_IMAGE }}
           username: '$oauthtoken'
           password: ${{ secrets.QUAY_OAUTH_TOKEN }}
-
-      - name: Build and push image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./Dockerfile
-          pull: true
-          push: true
           tags: |
-            ${{ env.IMAGE_NAME }}:${{ github.event.release.tag_name }}
-            ${{ env.IMAGE_NAME }}:latest
+            ${{ github.event.release.tag_name }}
+            latest
