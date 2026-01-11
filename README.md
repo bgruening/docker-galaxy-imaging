@@ -15,7 +15,9 @@ At first you need to install docker. Please follow the instruction on https://do
 
 After the successful installation, all what you need to do is:
 
-``docker run -d -p 8080:80 bgruening/galaxy-imaging``
+```bash
+docker run --rm -i -t --privileged -p 8080:80 bgruening/galaxy-imaging
+```
 
 I will shortly explain the meaning of all the parameters. For a more detailed describtion please consult
 the [docker manual](http://docs.docker.io/), it's really worth reading.
@@ -25,11 +27,11 @@ In case you do not have the Container stored locally, docker will download it fo
 will make the port 80 (inside of the container) available on port 8080 on your host.
 Inside the container a Apache Webserver is running on port 80 and that port can be bound to a
 local port on your host computer. With this parameter you can access your Galaxy instance via ``http://localhost:8080``
-immediately after executing the command above. ``bgruening/galaxy-deeptools`` is the Image/Container name,
-that directs docker to the correct path in the [docker index](https://index.docker.io/u/bgruening/galaxy-imaging/). ``-d``
-will start the docker container in daemon mode. For an interactive session, you can execute:
+immediately after executing the command above. ``bgruening/galaxy-imaging`` is the Image/Container name,
+that directs docker to the correct path in the [docker registry](https://quay.io/repository/bgruening/galaxy-imaging).
+ For an interactive session, you can execute:
 
-``docker run -i -t -p 8080:80 bgruening/galaxy-imaging``
+``docker run --rm -i -t --privileged -p 8080:80 bgruening/galaxy-imaging bash``
 
 and run the ``` startup ``` script by your own, to start PostgreSQL, Apache and Galaxy.
 
@@ -37,7 +39,7 @@ Docker images are "read-only", all your changes inside one session will be lost 
 
 Fortunately, this is as easy as:
 
-``docker run -d -p 8080:80 -v /home/user/galaxy_storage/:/export/ bgruening/galaxy-imaging``
+``docker run --rm -i -t --privileged -p 8080:80 -v /home/user/galaxy_storage/:/export/ bgruening/galaxy-imaging``
 
 With the additional ``-v /home/user/galaxy_storage/:/export/`` parameter, docker will mount the folder ``/home/user/galaxy_storage`` into the Container under ``/export/``. A ``startup.sh`` script, that is usually starting Apache, PostgreSQL and Galaxy, will recognise the export directory with one of the following outcomes:
 
@@ -51,14 +53,16 @@ Enabling Interactive Environments in Galaxy
 -------------------------------------------
 
 Interactive Environments (IE) are sophisticated ways to extend Galaxy with powerful services, like IPython, in a secure and reproducible way.
-For this we need to be able to launch Docker containers inside our Galaxy Docker container. At least docker 1.3 is needed on the host system.
+For this we need to be able to launch Docker containers inside our Galaxy Docker container.
 
-``docker run -d -p 8080:80 -p 8021:21 -p 8800:8800 --privileged=true -v /home/user/galaxy_storage/:/export/ bgruening/galaxy-imaging``
+``docker run -d -p 8080:80 -p 8021:21 -p 8800:8800 --privileged -v /home/user/galaxy_storage/:/export/ bgruening/galaxy-imaging``
 
 The port 8800 is the proxy port that is used to handle Interactive Environments. ``--privileged`` is needed to start docker containers inside docker.
 
+
 Using Parent docker
 -------------------
+
 On some linux distributions, Docker-In-Docker can run into issues (such as running out of loopback interfaces). If this is an issue,
 you can use a 'legacy' mode that use a docker socket for the parent docker installation mounted inside the container. To engage, set the
 environmental variable DOCKER_PARENT
@@ -89,37 +93,8 @@ Contributers
  - Thomas Wollmann
 
 
-History
-=======
-
- - 0.1: Initial release!
- - 18.09 release
-
-
 Support & Bug Reports
 =====================
 
 For support, questions, or feature requests please see https://github.com/bgruening/galaxy-imaging/issues.
 
-
-
-Licence (MIT)
-=============
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
