@@ -10,6 +10,7 @@ ENV GALAXY_CONFIG_BRAND="Galaxy Imaging" \
 
 # Install tools
 ARG TOOL_FILE=imagingtoolbox_tools.yml
+# We use ADD here and not COPY to support URLs from upstream tool files
 ADD ${TOOL_FILE} $GALAXY_ROOT/tools.yaml
 RUN tail -n +4 $GALAXY_ROOT/tools.yaml > $GALAXY_ROOT/tools_clean.yaml
 
