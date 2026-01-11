@@ -17,9 +17,9 @@ on:
 
 env:
   IMAGE_REGISTRY: quay.io
-  IMAGE_REPOSITORY: bgruening/galaxy-ngs-preprocessing
+  IMAGE_REPOSITORY: quay.io/bgruening/galaxy-imaging
   GALAXY_BASE_IMAGE: quay.io/bgruening/galaxy:25.1.1
-  TOOL_FILE: ngs_preprocessing.yml
+  TOOL_FILE: https://raw.githubusercontent.com/usegalaxy-eu/usegalaxy-eu-tools/refs/heads/master/imaging.yaml
 
 jobs:
   build:
